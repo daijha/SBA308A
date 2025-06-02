@@ -13,10 +13,15 @@ async function getdata(){
     console.log(result[0].type)// gives the joke category
 
 const jokeTypeList = result.map(result => result.type)
-console.log(jokeTypeList) // returns an array of the joke types
+//console.log(jokeTypeList) // returns an array of the joke types
 
-const jokeType = new Set(jokeTypeList) // set should remove duplicates. had to look this up
-console.log(jokeType)// because the array is random there are multiple varities of types. I have to keep this in mind if I want to filter by button. one second its 2 sometimes its 3 types to choose from
+const jokeTypeSet = new Set(jokeTypeList) // set should remove duplicates. had to look this up
+//console.log(jokeTypeSet)// because the array is random there are multiple varities of types. I have to keep this in mind if I want to filter by button. one second its 2 sometimes its 3 types to choose from SET IS NOT AN ARRAY AND MUST BE CONVERTED TO ONE TO GET ACCESS TO EACH TYPE...
+const jokeTypes = Array.from(jokeTypeSet)//snatched off google 
+//console.log(jokeTypes) //now i have an array of accessible data. sometimes one of the datatypes is undefined. 
+console.log(jokeTypes[0])
+console.log(jokeTypes[1])
+console.log(jokeTypes[2])
 
 }
 getdata()// have to call it for the console. logs to work
