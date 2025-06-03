@@ -18,13 +18,50 @@ let buttontype3 = document.createElement('button')
 buttontype3.textContent=`${jokeTypes[2]}`
 document.body.appendChild(buttontype3)
 
+let buttontype4 = document.createElement('button')
+buttontype4.textContent=`${jokeTypes[3]}`
+document.body.appendChild(buttontype4)
+
 if (jokeTypes[1] === undefined ){
     document.body.removeChild(buttontype2)
 }
 if (jokeTypes[2] === undefined ){
-    document.body.removeChild(buttontype3)
+    document.body.removeChild(buttontype3)// if the joke type does not generate, dont show the button 
 }
 
+if (jokeTypes[3] === undefined ){
+    document.body.removeChild(buttontype4)//apparently there are 4 types
+}
+
+let result = await gatherData() // repeated from module 1 to get the joke questions and answers 
+// console.log(result[0].punchline)
+let jokeSetup = result[0].setup //question
+let punchLine = result[0].punchline// answer use set timeout 
+
+function filterType(){// filterType() returns an array of all the jokes that are this type 
+    let filteredJokes = result.filter( joke => joke.type === "general")// refresh on array method 
+    console.log(filteredJokes)//right now only returns the general type 
+
+  
+    let JokeIndex = Math.floor(Math.random()*filteredJokes.length)
+console.log(JokeIndex)
+
+let jokeDisplay = document.getElementById("jokeDisplay")
+//eventListner construction 
+buttontype1.addEventListener("click",()=>{
+     filterType(buttontype1.textContent)
+    jokeDisplay.textContent = `${filteredJokes[JokeIndex].setup} :` 
+    setTimeout(()=>  jokeDisplay.textContent += `  ${filteredJokes[JokeIndex].punchline}`, 2000) //+= adds on i had to remember 
+    
+
+});
+
+
+
+
+
+}
+  filterType()
 
 }
 loadData()
