@@ -1,19 +1,8 @@
 # SBA308A
-create the api in module 1 
-create buttons with functionality  in module 2 
-create styling in module 3? maybe 
+This is a small webpage that uses a joke API to generate jokes. it uses three js modules , CSS styling and some minimal HTML structuring.
 
+to use this page just click a button that filters the joke api by joke type and enjoy tthe randome jokes that appear under that category. The punch lines appears after 3 seconds 
 
+based off of how the api works, you have to refresh the page to get acess to more genres to chosse from, there are 4 types max but when they appear is randomized .
 
-
-
-
-thought process snippet: may delete later because these are personal notes 
-things for next commit message:
-added basic css styling to bg and text font 
-re loaded the joke data and answer data 
-filtered the jokes by type 
-NEED TO GENERATE A RANDOM NUMBER PICKER FOR THE JOKE TYPE?
-creating the event listener  and a html container to display them in 
-
-find a way to print the joke when the button is clicked( event listner  and use get requests) 
+ 
