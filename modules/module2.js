@@ -62,7 +62,7 @@ async function loadData() {
       () =>
         (jokeDisplay.textContent =
           filteredJokes[JokeIndex].setup +
-          `  ${filteredJokes[JokeIndex].punchline}`),
+          ` : ${filteredJokes[JokeIndex].punchline}`),
       3000
     ); // just concatenate them because += stacks the answers
   });
@@ -80,7 +80,7 @@ async function loadData() {
       () =>
         (jokeDisplay.textContent =
           filteredJokes[JokeIndex].setup +
-          `  ${filteredJokes[JokeIndex].punchline}`),
+          ` : ${filteredJokes[JokeIndex].punchline}`),
       3000
     );
   });
@@ -98,7 +98,7 @@ async function loadData() {
       () =>
         (jokeDisplay.textContent =
           filteredJokes[JokeIndex].setup +
-          `  ${filteredJokes[JokeIndex].punchline}`),
+          `:  ${filteredJokes[JokeIndex].punchline}`),
       3000
     );
   });
@@ -116,15 +116,31 @@ async function loadData() {
       () =>
         (jokeDisplay.textContent =
           filteredJokes[JokeIndex].setup +
-          `  ${filteredJokes[JokeIndex].punchline}`),
+          ` : ${filteredJokes[JokeIndex].punchline}`),
       3000
     );
   });
+
+// reload button?
+
+let reloadContainer = document.createElement("div");
+document.body.appendChild(reloadContainer);
+reloadContainer.style.margin = "24px"
+
+  let reloadBtn = document.createElement("button");
+reloadContainer.appendChild(reloadBtn)
+reloadBtn.textContent =`Reload Page`;
+reloadBtn.addEventListener("click",()=>{
+ location.reload();
+})
 
   styleButton(buttontype1);
   styleButton(buttontype2);
   styleButton(buttontype3);
   styleButton(buttontype4);
+  styleButton(reloadBtn);
 }
 
 loadData();
+
+

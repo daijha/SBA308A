@@ -1,4 +1,4 @@
-// for using the api. this api already generates the random jokes
+// for using the API. this api already generates the random jokes
 
 let jokeTypeList = [];
 let jokeTypeSet = new Set(jokeTypeList); // declaring these globally for easier access 

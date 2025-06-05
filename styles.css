@@ -6,6 +6,12 @@ body{
 }
 #jokeDisplay{
 border: 1px solid white;
+border-radius:12px;
 padding: 24px;
-margin:24px;
+margin:auto;
+width:60%;
+align-items: center;
+}
+p{
+    margin-bottom: 24px;
 }
