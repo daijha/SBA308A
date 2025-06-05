@@ -9,7 +9,7 @@ import { styleButton } from "/modules/Module3.js"; // importing from the style m
 
 async function loadData() {
   await getData();
-  console.log(jokeTypes[0]);
+  console.log(jokeTypes);
 
   let buttontype1 = document.createElement("button");
   buttontype1.textContent = `${jokeTypes[0]}`;
@@ -50,6 +50,10 @@ async function loadData() {
   //eventListner construction
   buttontype1.addEventListener("click", () => {
     let filteredJokes = result.filter((joke) => joke.type === jokeTypes[0]);
+        if (filteredJokes.length === 0 ){
+        jokeDisplay.textContent="No jokes generated this time. Reload the page for more!"
+        return;
+    }
     let JokeIndex = Math.floor(Math.random() * filteredJokes.length);
     console.log(JokeIndex);
     jokeDisplay.textContent = ""; // try this to reload the page
@@ -64,6 +68,10 @@ async function loadData() {
   });
   buttontype2.addEventListener("click", () => {
     let filteredJokes = result.filter((joke) => joke.type === jokeTypes[1]);
+    if (filteredJokes.length === 0 ){
+        jokeDisplay.textContent="No jokes generated this time. Reload the page for more!"
+        return;
+    }
     let JokeIndex = Math.floor(Math.random() * filteredJokes.length);
     console.log(JokeIndex);
     jokeDisplay.textContent = "";
@@ -78,6 +86,10 @@ async function loadData() {
   });
   buttontype3.addEventListener("click", () => {
     let filteredJokes = result.filter((joke) => joke.type === jokeTypes[2]);
+        if (filteredJokes.length === 0 ){
+        jokeDisplay.textContent="No jokes generated this time. Reload the page for more!"
+        return;
+    }
     let JokeIndex = Math.floor(Math.random() * filteredJokes.length);
     console.log(JokeIndex);
     jokeDisplay.textContent = "";
@@ -92,6 +104,10 @@ async function loadData() {
   });
   buttontype4.addEventListener("click", () => {
     let filteredJokes = result.filter((joke) => joke.type === jokeTypes[3]);
+        if (filteredJokes.length === 0 ){
+        jokeDisplay.textContent="No jokes generated this time. Reload the page for more!"
+        return;
+    }
     let JokeIndex = Math.floor(Math.random() * filteredJokes.length);
     console.log(JokeIndex);
     jokeDisplay.textContent = "";
